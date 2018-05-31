@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.email.valid && (form.controls.email.dirty || form.controls.email.touched)" color="danger">
+        <div [hidden]="!form.controls.email.errors.required">
+          O Campo é obrigatório
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.password.valid && (form.controls.password.dirty || form.controls.password.touched)" color="danger">
+        <div [hidden]="!form.controls.password.errors.required">
+          O Campo é obrigatório
+        </div>
+      </ion-item>
+      <div padding>
+        <button ion-button block color="primary" type="submit" [disabled]="!form.valid" (click)="loginAccount()">Entrar</button>
+      </div>
+    </form>
+  </ion-list>
+
+  <button ion-button block clear>
+    Esqueci minha senha
+  </button>
+
+
+  <button class="center" ion-button outline color="secondary" margin-top (click)="createAccount()">
+    Criar Conta
+  </button>
+
+  <button class="center" ion-button outline icon-left color="danger">
+    <ion-icon name="logo-google"></ion-icon>
+    Entrar com o Google
+  </button>
+
+
+</ion-content>
