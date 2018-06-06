@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth/auth-service';
 import { HomePage } from '../home/home';
-import { RegisterPage } from '../register/register';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -33,9 +32,14 @@ export class LoginPage {
   }
 
   createAccount() {
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.push("RegisterPage");
   }
   
+  esqueciMinhaSenha() {
+    this.navCtrl.push("ResetarsenhaPage");
+  }
+
+
   loginAccount() {
     if (this.form.valid) {
       this.authService.logar(this.form.value)

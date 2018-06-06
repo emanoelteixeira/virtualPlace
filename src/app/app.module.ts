@@ -13,14 +13,12 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ContactProvider } from '../providers/contact/contact';
 import { AuthService } from '../providers/auth/auth-service';
-import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LoginPage,
-    RegisterPage
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -40,8 +38,7 @@ import { RegisterPage } from '../pages/register/register';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage,
-    RegisterPage
+    LoginPage
   ],
   providers: [
     StatusBar,

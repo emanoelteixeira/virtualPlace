@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterPage {
   form: FormGroup;
   user: any = {};
- 
+
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -21,7 +21,7 @@ export class RegisterPage {
     private toastCtrl: ToastController,
     private authService: AuthService) {
 
-    this.createForm();  
+    this.createForm();
   }
 
   createForm() {
